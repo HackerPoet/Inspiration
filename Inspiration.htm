@@ -1,0 +1,176 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Inspiration Generator</title>
+</head>
+<body>
+<div align="center"><font face="arial" size="6"><b>Inspiration Generator</b></font>
+<br /><br /><br /><br /><br />
+<font face="arial"><h4 id="mytext"></h4></font>
+<br /><br /><br /><br />
+<input type="button" value="Generate Inspiration" onclick="make()"><br /><br />
+Keep On Writing!
+</div>
+<script language="JavaScript" type="text/javascript">
+<!--
+var noun = new Array("moon","earth","phantom","star","sunset","pearl","dawn","mirror","sand","ripple","shadow","sky","flower","throne","unicorn","devil","cloud","dove","storm","raindrop","spirit","rainbow","enemy","world","universe","galaxy","petal","truth","lie","swan","maiden","day","night","empire","desert","beast","forest","labyrinth","warrior","ocean","prisoner","coward","child","water","sword","battle","garden","messenger","tunnel","fool","crown","demon","angel","law","clock","smoke","cycle","pendant","picture","key","mountain","valley","lagoon","apprentice","candle","twilight","river","knife","flame","paradox","banshee","fountain","forest","castle","palace","omen","revolution","grave","swamp","creek","pond","bird","feather","serpent","friend","axe","peril","game","poison","wizard","reflection","secret","trial","poem","fable","riddle","god","string","city","paradise","disease","cave","spider","lightning","thunder","thread","needle","stone","elixir","claw","symphony","spark","reaper","chronicle","legend","pyramid","cathedral");
+var cons = new Array("chaos","heaven","hell","doubt","hope","creation","destruction","nature","revenge","evil","despair","fear","perfection","happiness","sadness","envy","luck","pride","beauty","truth","charm","death","life","regret","love","hate","meaning","shame","felicity","bliss","ignorance","chance","war","peace","determination","perseverance","danger","magic","experience","destitution","levity","empathy","eloquence","time","power","honesty","responsibility","solitude","disappointment","cheating","jealousy","morality","reality","philosophy","art","boredom","wisdom","trust","ecstasy","friendship","justice","knowledge","mercy","society","virtue");
+var pers = new Array("soul","body","heart","mind","memory","emotion","love","desire","tear","dream","eye","chain","fear","pain","smile","head","lip","beauty","fury","shackle","obsession","passion","freedom","destiny","hand","fist","wing","intention","home","hue","humanity","fate","morale","belief","palm","expression","concern","pet","assistant","humility","umbrella","skin","hero","pillow","novel","pocket","curiosity","courage","tail","mystery","loyalty","bracelet","necklace","blood","youth","talent");
+var adj = new Array("amber","jade","crystal","doomed","dark","mystic","ghostly","fiery","icy","vacant","noble","graceful","weary","silver","golden","lonely","elegant","pure","quiet","battered","solitary","perfect","green","wrinkled","chosen","shy","crimson","grim","bloody","broken","warm","violent","tangled","twisted","scenic","cautious","disposed","pale","vivid","weak","firm","motionless","cracked","single","ancient","ruined","lost","helpless","courageous","stone","thin","tropical","scattered","corrupt","calm","ethereal","fragrant","white","black","beautiful","remarkable","deep","ignorant","passionate","magical","bright","impossible","zealous","cloudy","invisible");
+var est = new Array("deepest","most insignificant","greatest","best","unknown","oldest","poorest","dearest","most open","happiest","other","wisest","secret","highest","largest","most valuable","untouched","first","last","earliest","longest","strongest","weakest","brightest","dimmest","top of the","place beyond the","driest","darkest","fastest","slowest","ultimate","final","farthest","closest","sweetest","loveliest","proudest","fiercest","bloodiest","faintest","greediest");
+var verb = new Array("weep","escape","shine","laugh","cry","promise","mourn","whisper","listen","sleep","remember","gaze","pause","awaken","leave","panic","pray","fly","rejoice","look","reflect","know","apologize","grow","separate","rage","fall","clear","wait","sing","shrivel","die","wither","question","rest","crumble","learn","stumble","thrive","bleed","breathe","confess","dream","fade","falter","flee","freeze","follow","lead","live","melt","merge","move","preach","repeat","reverse","sparkle","strengthen","weaken","wander");
+var verbing = new Array("kissing","illuminating","scarring","reviving","traveling through","blinding","enchanting","destroying","remembering","forgetting","possessing","painting","washing away","bathing","impressing","clinging to","hearing","stealing","discovering","examining","capturing","passing","surviving","ejecting","sorting","worshipping","punishing","rewarding","praising","tearing","curing","burning","imagining","judging","wrestling","visiting","replacing","protecting","obtaining","naming");
+var verbed = new Array("trusted","burned","loved","outlived","shattered","desired","crossed","betrayed","owned","sacrificed","touched","blessed","believed","shared","entertained","lost","helped","dammed","rewarded","thanked","lifted","extinguished","seen","warned","admired","murdered","unraveled","raveled","forgave","studied","polished","abandoned","illuminated","scattered","trapped","locked","attacked","copied","divided","haunted","remembered","returned","tricked");
+var adv = new Array("slowly","quickly","gravely","finally","silently","happily","scarcely","never","always","boldly","eternally","gently","mostly","truly","blissfully","freely","fiercely","tranquilly","partiality","fully","passionately","quietly","softly","gradually","politely","deliberately","brutally","powerfully","madly","foolishly","naturally","honestly","valiantly","anxiously","eagerly","carelessly","fatally","hastily","helplessly","hopelessly","innocently","mysteriously","naturally","seldom");
+var sent = new Array();
+sent.push("The @a @n");
+sent.push("Has the @n been @d by the @n?");
+sent.push("Was the @n ever @i the @n?");
+sent.push("@i the @p of the @ns");
+sent.push("Was the @n really @d by the @a @n?");
+sent.push("My @a @p");
+sent.push("And shall his @ns @v");
+sent.push("Her @ns @v");
+sent.push("@i the @ns");
+sent.push("@d by the @s @n");
+sent.push("Like the @n of my @p");
+sent.push("@i the @n");
+sent.push("Even the @n may @v");
+sent.push("Or @y @i my @p");
+sent.push("@v now, and discover the @p of @ns");
+sent.push("I would have @d the @a @n");
+sent.push("The @n has a @p, @a and @a");
+sent.push("Who was it, @i my @a @p?");
+sent.push("If the @n was @d, it would @v");
+sent.push("When will @c @v?");
+sent.push("When has the @s @n @d the @n?");
+sent.push("If @c was @d, it would @v");
+sent.push("Have you ever @d a @n?");
+sent.push("Two @ns @v on a @a @n");
+sent.push("She had @d the @n");
+sent.push("He had @d the @n");
+sent.push("His @p had @y @d his @p");
+sent.push("Her @p had @y @d his @p");
+sent.push("As @a as a @n");
+sent.push("The @n and the @n");
+sent.push("The @s @n is always @d");
+sent.push("@v, don't @v for my @p");
+sent.push("Only @i my @p brings me further into @c");
+sent.push("All @ns @v, by their own @c");
+sent.push("@c will @y be @d");
+sent.push("@c is the @s @n");
+sent.push("I have seen @ns @d before the @ns");
+sent.push("Oh, what @a @ns @v?");
+sent.push("@a is the @s @n's @p");
+sent.push("@c remains the @s @p");
+sent.push("Can one ever @y @v without @c?");
+sent.push("The @s @n will @y be @d");
+sent.push("@c is @c");
+sent.push("Only @c is @c");
+sent.push("The @n of @c");
+sent.push("A @n in a @n");
+sent.push("@c comes only through @i @c");
+sent.push("The @p is the key to @c");
+sent.push("Some say @ns will return, @a or @a");
+sent.push("@ns of the @a @n");
+sent.push("Where is the @s @n?");
+sent.push("She has @d the @p of the @n");
+sent.push("Man's @p is his @n");
+sent.push("Because I could not @v for @c");
+sent.push("@c makes @c");
+sent.push("My @p is as @a as @c");
+sent.push("To @v in @c");
+sent.push("No @n for @a @ns");
+sent.push("Why was her @p @i the @n?");
+sent.push("The @a @p of the @n")
+sent.push("His @p would @v no more")
+sent.push("Could her @a @p @v?")
+sent.push("Every @n has its @n")
+sent.push("I @d you, but @c was in my @p")
+sent.push("@i @c without @i it")
+sent.push("The @s ones @y @v")
+sent.push("It @y @d her @p")
+
+shuffle(noun);
+shuffle(cons);
+shuffle(pers);
+shuffle(adj);
+shuffle(est);
+shuffle(verb);
+shuffle(verbing);
+shuffle(verbed);
+shuffle(adv);
+shuffle(sent);
+make();
+
+function shuffle(a)
+{
+    var j, x, i;
+    for (i = a.length - 1; i > 0; i--) {
+        j = Math.floor(Math.random() * (i + 1));
+        x = a[i];
+        a[i] = a[j];
+        a[j] = x;
+    }
+    return a;
+}
+
+function next_val(a)
+{
+     var v = a.shift();
+     a.push(v);
+     return v;
+}
+
+function make()
+{
+     var mysent = next_val(sent);
+     var output = "";
+     for (var i=0; i<mysent.length; i++)
+     {
+          if (mysent.charAt(i)=='@')
+          {
+               i++;
+               switch(mysent.charAt(i))
+               {
+                 case 'a':
+                         output += next_val(adj);
+                         break;
+                 case 's':
+                         output += next_val(est);
+                         break;
+                 case 'n':
+                         output += next_val(noun);
+                         break;
+                 case 'c':
+                         output += next_val(cons);
+                         break;
+                 case 'p':
+                         output += next_val(pers);
+                         break;
+                 case 'v':
+                         output += next_val(verb);
+                         break;
+                 case 'i':
+                         output += next_val(verbing);
+                         break;
+                 case 'd':
+                         output += next_val(verbed);
+                         break;
+                 case 'y':
+                         output += next_val(adv);
+                         break;
+                 }
+          }
+          else
+          {
+               output += mysent.charAt(i);
+          }
+     }
+     output = output.substring(0,1).toUpperCase() + output.substring(1);
+     document.getElementById('mytext').innerHTML = output;
+}
+-->
+</script>
+</body>
+</html>
